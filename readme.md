@@ -103,10 +103,7 @@ result: `bec87058df8e`
 La commande docker rm permet de supprimer un conteneur arrêté.
 ## TP1 - 4
 
-command:
-```bash
-docker pull nginx
-```
+command:`docker pull nginx`
 
 result:
 ```bash
@@ -127,6 +124,7 @@ Cette commande permet de télécharger l’image officielle nginx depuis Docker 
 
 ### docker run nginx
 command: `docker run nginx`
+
 result:
 ```bash
 e72626c5a28f0397b934c93bd5ad34f5a0b62545196d26ba5e449e3dd6ee7968
@@ -154,5 +152,36 @@ command: `docker rm mon_nginx`
 
 result: `mon_nginx`
 le conteneur mon_nginx a été supprimé avec succès
+
+## TP1 - 5&6
+### bash command:
+```bash 
+docker compose up --build
+```
+
+### Verification:
+http://localhost:5002: 
+
+Retourne : Flask is running
+
+ Vérifie que l’application Flask est bien démarrée.
+
+http://localhost:5002/healthz:
+
+Retourne : MongoDB:OK
+
+Vérifie que l’application Flask est correctement connectée à la base de données MongoDB.
+
+http://localhost:5002/insert:
+
+Retourne : Inserted:<inserted_id>
+
+Insère un document dans la base MongoDB depuis l’application Flask.
+
+http://localhost:5002/read:
+
+Affiche la liste des messages stockés dans la base MongoDB.
+
+Vérifie la lecture des données depuis la base de données.
 
 
